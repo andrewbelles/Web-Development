@@ -1,1 +1,0 @@
-fn(actix_web::web::Form<FormData>) -> impl std::future::Future<Output = impl actix_web::Responder> {echo}
