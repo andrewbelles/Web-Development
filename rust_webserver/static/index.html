@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Draggable Div Element</title>
+  <style>
+    body {
+      background-color: #9bebdf;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      font-family: Arial, sans-serif;
+    }
+    .controls {
+      width: 100%;
+      text-align: center;
+      margin: 20px 0;
+      left: 0;
+      z-index: 2;
+    }
+    .controls input {
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+    .line {
+      position: absolute;
+      height: 3px;
+      background-color: #6d6e6d;
+      top: 0;
+      left: 0;
+      transform-origin: 0% 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .circle {
+      width: 50px;
+      height: 50px;
+      border: 2px solid #13593d;
+      border-radius: 50%;
+      padding: 8px;
+      cursor: grab;
+      user-select: text;
+      position: fixed;
+      top: 50px;
+      left: 50px;
+      background-color: #2c9182;
+      overflow: auto;
+      transition:
+        width 75ms ease,
+        left  75ms ease,
+        top   75ms ease,
+        transform 75ms ease;
+      will-change: width, left, top, transform;
+      z-index: 1;
+    }
+    #a {
+      left: calc(50% - 100px);
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #b {
+      left: calc(50% + 100px);
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  </head>
+  <body>
+    <h2 style="text-align:center; margin-top:40px">Pull Example</h2>
+    <div class="controls">
+      <label for="length_slider">
+        Rod length: <span id="length_value">200</span>px
+      </label>
+      <input 
+        type="range"
+        id="length_slider"
+        min="50"
+        max="600"
+        value="200"
+      />
+    </div>
+    <div class="circle" id="a"></div>
+    <div class="circle" id="b"></div>
+    <div class="line"></div> 
+    <script src="script.js"></script>
+  </body>
+</html>

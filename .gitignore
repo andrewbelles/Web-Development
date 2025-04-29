@@ -1,1 +1,3 @@
-rust_webserver/target/
+/rust_webserver/target/
+
+/rust_webserver/Cargo.*
